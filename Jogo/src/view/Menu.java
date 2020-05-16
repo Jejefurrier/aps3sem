@@ -6,6 +6,7 @@
 package view;
 
 import conexao.conexao;
+import conexao.conexaostmt;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -96,13 +97,13 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        conexao conexao = new conexao();
-        conexao.inserirRanking("Kelvin", 14);
+        conexaostmt conexao = new conexaostmt();
+        conexao.inserirRanking("Jorge", 9);
         conexao.desconectar();  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        conexao conexao = new conexao();
+        conexaostmt conexao = new conexaostmt();
         ResultSet result = conexao.getRanking();
         try {
             while(result.next()){
@@ -114,6 +115,21 @@ public class Menu extends javax.swing.JFrame {
         } finally{
             conexao.desconectar();
         }
+        /*
+        Para pegar algo especifico (como nao temos imgs ainda, usei o ranking pra teste, mudar dps
+        ResultSet result = conexao.getImg(4);
+        try {
+            while(result.next()){
+                System.out.println(result.getString("nome"));
+                System.out.println(result.getInt("pontuacao"));
+            }
+        } catch (SQLException e) {
+            System.out.println("Falha ao conectar ao servidor. " + e);
+        } finally{
+            conexao.desconectar();
+        }
+        */
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
