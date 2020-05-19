@@ -97,24 +97,19 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        conexaostmt conexao = new conexaostmt();
-        conexao.inserirRanking("Jorge", 9);
-        conexao.desconectar();  
+        //conexaostmt conexao = new conexaostmt();
+        //conexao.inserirRanking("Jorge", 9);
+        //conexao.desconectar();
+        Principal principal = new Principal();
+        principal.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        conexaostmt conexao = new conexaostmt();
-        ResultSet result = conexao.getRanking();
-        try {
-            while(result.next()){
-                System.out.println(result.getString("nome"));
-                System.out.println(result.getInt("pontuacao"));
-            }
-        } catch (SQLException e) {
-            System.out.println("Falha ao conectar ao servidor. " + e);
-        } finally{
-            conexao.desconectar();
-        }
+        Ranking ranking = new Ranking();
+        ranking.setVisible(true);
+        dispose();
+        
         /*
         Para pegar algo especifico (como nao temos imgs ainda, usei o ranking pra teste, mudar dps
         ResultSet result = conexao.getImg(4);
