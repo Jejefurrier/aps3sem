@@ -72,7 +72,7 @@ public class Ranking extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Ink Free", 0, 36)); // NOI18N
         jLabel1.setText("RANKING");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -99,12 +99,13 @@ public class Ranking extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel1))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
