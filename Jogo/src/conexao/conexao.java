@@ -75,7 +75,7 @@ public class conexao {
         }
     }
     
-    protected PreparedStatement criarStatementPrep(String sql){
+    protected PreparedStatement criarStatement(String sql){
         /* Cria o statement que irá receber parametros */
         try{
             boolean conectou = this.conectar();

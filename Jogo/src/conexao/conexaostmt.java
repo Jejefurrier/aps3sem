@@ -16,7 +16,7 @@ public class conexaostmt extends conexao{
     public boolean inserirRanking(String nome, int pontuacao){
         /* Método que irá inserir a pontuação do jogador ao final de seu jogo */
         String sql = "INSERT INTO ranking (nome, pontuacao) VALUES (?,?);";
-        this.stmtprep = this.criarStatementPrep(sql);
+        this.stmtprep = this.criarStatement(sql);
         try{
             this.stmtprep.setString(1, nome);
             this.stmtprep.setInt(2, pontuacao);
@@ -55,7 +55,7 @@ public class conexaostmt extends conexao{
         this.stmt = null;
         try {
             String sql = "SELECT nome, pontuacao FROM ranking WHERE id = ? ORDER BY pontuacao desc;";
-            this.stmtprep = this.criarStatementPrep(sql);
+            this.stmtprep = this.criarStatement(sql);
             this.stmtprep.setInt(1, id);
             this.resultSet = stmtprep.executeQuery();
             return this.resultSet;
