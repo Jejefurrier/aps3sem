@@ -22,21 +22,21 @@ import javax.swing.*;
  * @author vini_
  */
 public class Principal extends JFrame {
-    String[] ListaDeLixo = new String[]{ "casca_de_banana", "colher", "copo_plastico", "copo_vidro", "envelope", "garrafa_plastica", "garrafa_vidro", "isopor", "latas", "maça", "maçaneta", "mentos", "Ovo", "papel", "papelao", "pote_plastico", "pote_vidro", "prato_vidro", "sache_de_cha", "sacola_plastica", "tampa_garrafa", "tubo_de_cobre"};
+
     view.Movimento mov = new view.Movimento();
+    Lixos lixos = new Lixos();
     boolean cair = true;
 
     ImageIcon fundo = new ImageIcon(getClass().getResource("/imgs/resources/Lixeiras.jpg"));
     JLabel bg = new JLabel(fundo);
-    ImageIcon lixo = new ImageIcon(getClass().getResource("/imgs/resources/"+ GenerateRandomTrash() +".png"));
+    ImageIcon lixo = null;
     JLabel obj_lixo = new JLabel(lixo);
-
-    int Pontuacao;
+    Jogo jogo = new Jogo("KLEBERSON");
 
     String SelectedLixo;
     /** Creates new form Principal */
     public Principal() {
-
+        lixos.SetImage(lixo);
         bg.setBounds(0, 350, 800, 500);
         //obj_lixo.setBounds(100, 0, 50, 50);
         add(bg);
@@ -44,6 +44,7 @@ public class Principal extends JFrame {
         initComponents();
         GenerateNewTrash();
         mov.setInitialPosition(obj_lixo);
+
     }
     
     public void Control(){
@@ -86,14 +87,15 @@ public class Principal extends JFrame {
 
                                 mov.setInitialPosition(obj_lixo);
                                 
-                                lixo = new ImageIcon(getClass().getResource("/imgs/resources/"+ GenerateRandomTrash() +".png"));
+                                lixos.SetImage(lixo);
 
 
     
                                 obj_lixo.setIcon(lixo);
-                                Pontuacao++;
+                                jogo.Pontuacao++;
                             }else{
                                 cair = false;
+
                             }
 
 
@@ -178,10 +180,7 @@ public class Principal extends JFrame {
         Control();
     }
 
-    public String GenerateRandomTrash(){
-        Random random = new Random();
-        return ListaDeLixo[random.nextInt(22)];
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
