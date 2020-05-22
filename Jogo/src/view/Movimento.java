@@ -29,12 +29,4 @@ public class Movimento {
         }// 0-9 PRIMEIRA COLUNA 10-19 SEGUNDA COLUNA, 20-29 TERCEIRA, 30-39 QUARTA 40-49 QUINTA 50-59
         return xPosition - 160;
     }
-
-
-
-
-
-
-
-
 }

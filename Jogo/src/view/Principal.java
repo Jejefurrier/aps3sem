@@ -60,7 +60,7 @@ public class Principal extends JFrame {
                     x = mov.WalkRight(x);
                 }
                 if(e.getKeyCode() == 37){
-                    x = mov.WalkLeft(y);
+                    x = mov.WalkLeft(x);
                 }
                 obj_lixo.setBounds(x, y, 50, 50);
             }
@@ -79,24 +79,19 @@ public class Principal extends JFrame {
                 while(cair){
                     try{
                         sleep(10);
-                        if(y > 450){//pega se o objeto que ta caindo ta na altura das lixeiras
+                        if(y > 500){//pega se o objeto que ta caindo ta na altura das lixeiras
                             if(RightTrash(x, 1)){ // SUBSTITUI O 1 PELO TIPO DO LIXO E VE SE AS POSIÇÕES DO LIXO TA CERTO
 
                                 Movimento mov = new Movimento();
 
                                 float[] pos = mov.setInitialPosition();
+                                
+                                lixo = new ImageIcon(getClass().getResource("/imgs/resources/"+ GenerateRandomTrash() +".png"));
 
-                                Image img = null;
-                                try {
-                                    img = ImageIO.read(new File("C:\\Users\\Jeferson\\Desktop\\APS\\aps3sem\\Jogo\\src\\imgs\\resources\\"+ GenerateRandomTrash() +".png"));
-                                    x = (int)pos[0];
-                                    y = 0;
-
-                                }catch(IOException a)
-                                {
-                                    a.printStackTrace();
-                                }
-                                lixo.setImage(img);
+                                x = (int)pos[0];
+                                y = 0;
+    
+                                obj_lixo.setIcon(lixo);
                                 Pontuacao++;
                             }else{
                                 cair = false;
