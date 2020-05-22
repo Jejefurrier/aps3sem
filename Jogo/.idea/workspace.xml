@@ -62,22 +62,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1317" height="180" key="GridCell.Tab.0.bottom" timestamp="1590106662941">
+    <state x="410" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590113503309">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="180" key="GridCell.Tab.0.bottom/0.0.1360.728/-1366.0.1366.728@0.0.1360.728" timestamp="1590106662941" />
-    <state width="1317" height="180" key="GridCell.Tab.0.center" timestamp="1590106662940">
+    <state x="410" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.728/-1366.0.1366.728@0.0.1360.728" timestamp="1590113503309" />
+    <state width="1317" height="180" key="GridCell.Tab.0.bottom" timestamp="1590124774293">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="180" key="GridCell.Tab.0.center/0.0.1360.728/-1366.0.1366.728@0.0.1360.728" timestamp="1590106662940" />
-    <state width="1317" height="180" key="GridCell.Tab.0.left" timestamp="1590106662940">
+    <state width="1317" height="180" key="GridCell.Tab.0.bottom/0.0.1360.728/-1366.0.1366.728@0.0.1360.728" timestamp="1590124774293" />
+    <state width="1317" height="180" key="GridCell.Tab.0.center" timestamp="1590124774292">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="180" key="GridCell.Tab.0.left/0.0.1360.728/-1366.0.1366.728@0.0.1360.728" timestamp="1590106662940" />
-    <state width="1317" height="180" key="GridCell.Tab.0.right" timestamp="1590106662941">
+    <state width="1317" height="180" key="GridCell.Tab.0.center/0.0.1360.728/-1366.0.1366.728@0.0.1360.728" timestamp="1590124774292" />
+    <state width="1317" height="180" key="GridCell.Tab.0.left" timestamp="1590124774292">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="180" key="GridCell.Tab.0.right/0.0.1360.728/-1366.0.1366.728@0.0.1360.728" timestamp="1590106662941" />
+    <state width="1317" height="180" key="GridCell.Tab.0.left/0.0.1360.728/-1366.0.1366.728@0.0.1360.728" timestamp="1590124774292" />
+    <state width="1317" height="180" key="GridCell.Tab.0.right" timestamp="1590124774293">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="180" key="GridCell.Tab.0.right/0.0.1360.728/-1366.0.1366.728@0.0.1360.728" timestamp="1590124774293" />
     <state x="336" y="162" key="run.anything.popup" timestamp="1589932273906">
       <screen x="0" y="0" width="1360" height="728" />
     </state>

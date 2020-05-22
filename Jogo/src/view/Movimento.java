@@ -1,32 +1,35 @@
 package view;
 
 import java.util.Random;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.IOException;
+import java.util.Collection;
+import java.util.List;
+import java.util.Random;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
 public class Movimento {
 
     //Chame no inicio de cada rodada pra gerar a posição X do lixo de forma aleatoria
-    float[] setInitialPosition(){
+    void setInitialPosition(JLabel label){
         Random random = new Random();
-        int y = (random.nextInt(6) * 80); //Gera um número aleatorio entre 0 e 6 e multiplica por 10 pra pegar a posição certa
-        float[] newPosition = new float[2]; //instancia um novo float pro return
-        newPosition[0] = 0;
-        newPosition[1] = y;
-        return newPosition;
+        int valor = random.nextInt(6) * 50; //Gera um número aleatorio entre 0 e 6 e multiplica por 10 pra pegar a posição certa
+        label.setBounds(valor, 0, 50,50);
     }
     //Chame no evento keypress da seta pra DIREITA, ele vai receber a atual posição X do lixo e vai retornar a nova posição dele
-    int WalkRight(int xPosition){
-        if(xPosition >=800)
-        {
-            return xPosition;
-        }// 0-9 PRIMEIRA COLUNA 10-19 SEGUNDA COLUNA, 20-29 TERCEIRA, 30-39 QUARTA 40-49 QUINTA 50-59
-        return xPosition + 160;
+    void WalkRight(JLabel label){
+        label.setBounds(label.getX() + 160, label.getY(), 50,50);
     }
     //Chame no evento keypress da seta pra ESQUERDA, ele vai receber a atual posição X do lixo e vai retornar a nova posição dele
-    int WalkLeft(int xPosition){
-        if(xPosition <=0)
-        {
-            return xPosition;
-        }// 0-9 PRIMEIRA COLUNA 10-19 SEGUNDA COLUNA, 20-29 TERCEIRA, 30-39 QUARTA 40-49 QUINTA 50-59
-        return xPosition - 160;
+    void WalkLeft(JLabel label){
+        label.setBounds(label.getX() - 160, label.getY(), 50,50);
     }
+    void FallLixo(JLabel label){
+        label.setBounds(label.getX(), label.getY() + 1, 50, 50);
+    }
+
 }

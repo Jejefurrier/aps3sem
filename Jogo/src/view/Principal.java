@@ -23,13 +23,14 @@ import javax.swing.*;
  */
 public class Principal extends JFrame {
     String[] ListaDeLixo = new String[]{ "casca_de_banana", "colher", "copo_plastico", "copo_vidro", "envelope", "garrafa_plastica", "garrafa_vidro", "isopor", "latas", "maça", "maçaneta", "mentos", "Ovo", "papel", "papelao", "pote_plastico", "pote_vidro", "prato_vidro", "sache_de_cha", "sacola_plastica", "tampa_garrafa", "tubo_de_cobre"};
-    Movimento mov = new Movimento();
-    int x = (int)mov.setInitialPosition()[0], y = 0;
+    view.Movimento mov = new view.Movimento();
     boolean cair = true;
+
     ImageIcon fundo = new ImageIcon(getClass().getResource("/imgs/resources/Lixeiras.jpg"));
     JLabel bg = new JLabel(fundo);
     ImageIcon lixo = new ImageIcon(getClass().getResource("/imgs/resources/"+ GenerateRandomTrash() +".png"));
     JLabel obj_lixo = new JLabel(lixo);
+
     int Pontuacao;
 
     String SelectedLixo;
@@ -37,12 +38,12 @@ public class Principal extends JFrame {
     public Principal() {
 
         bg.setBounds(0, 350, 800, 500);
-        obj_lixo.setBounds(100, 0, 50, 50);
+        //obj_lixo.setBounds(100, 0, 50, 50);
         add(bg);
         add(obj_lixo);
         initComponents();
         GenerateNewTrash();
-
+        mov.setInitialPosition(obj_lixo);
     }
     
     public void Control(){
@@ -55,14 +56,13 @@ public class Principal extends JFrame {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                Movimento mov = new Movimento();
                 if(e.getKeyCode() == 39){
-                    x = mov.WalkRight(x);
+                    mov.WalkRight(obj_lixo);
                 }
                 if(e.getKeyCode() == 37){
-                    x = mov.WalkLeft(x);
+                    mov.WalkLeft(obj_lixo);
                 }
-                obj_lixo.setBounds(x, y, 50, 50);
+                //obj_lixo.setBounds(x, y, 50, 50);
             }
 
             @Override
@@ -79,17 +79,16 @@ public class Principal extends JFrame {
                 while(cair){
                     try{
                         sleep(10);
-                        if(y > 500){//pega se o objeto que ta caindo ta na altura das lixeiras
-                            if(RightTrash(x, 1)){ // SUBSTITUI O 1 PELO TIPO DO LIXO E VE SE AS POSIÇÕES DO LIXO TA CERTO
+                        if(obj_lixo.getY() > 500){//pega se o objeto que ta caindo ta na altura das lixeiras
+                            if(RightTrash(obj_lixo.getX(), 1)){ // SUBSTITUI O 1 PELO TIPO DO LIXO E VE SE AS POSIÇÕES DO LIXO TA CERTO
 
-                                Movimento mov = new Movimento();
 
-                                float[] pos = mov.setInitialPosition();
+
+                                mov.setInitialPosition(obj_lixo);
                                 
                                 lixo = new ImageIcon(getClass().getResource("/imgs/resources/"+ GenerateRandomTrash() +".png"));
 
-                                x = (int)pos[0];
-                                y = 0;
+
     
                                 obj_lixo.setIcon(lixo);
                                 Pontuacao++;
@@ -103,8 +102,9 @@ public class Principal extends JFrame {
                     {
                         System.out.println("Erro ao mover elemento");
                     }
-                    y+=1;
-                    obj_lixo.setBounds(x, y, 50, 50);
+                    mov.FallLixo(obj_lixo);
+                    //y+=1;
+                    //obj_lixo.setBounds(x, y, 50, 50);
                 }   
             }
             
