@@ -32,7 +32,7 @@ public class Lixos {
 
     public String GenerateRandomTrash(){
         Random random = new Random();
-        ResultSet result = conexao.getImg(random.nextInt(5)+1);
+        ResultSet result = conexao.getImg(random.nextInt(22)+1);
             
         try {
             while(result.next()){
