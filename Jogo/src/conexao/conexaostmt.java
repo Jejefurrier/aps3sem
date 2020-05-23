@@ -54,7 +54,7 @@ public class conexaostmt extends conexao{
         this.resultSet = null;
         this.stmt = null;
         try {
-            String sql = "SELECT nome, pontuacao FROM ranking WHERE id = ? ORDER BY pontuacao desc;";
+            String sql = "SELECT caminho, tipo FROM imagens WHERE id = ?;";
             this.stmtprep = this.criarStatement(sql);
             this.stmtprep.setInt(1, id);
             this.resultSet = stmtprep.executeQuery();

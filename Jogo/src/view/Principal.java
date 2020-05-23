@@ -91,7 +91,7 @@ public class Principal extends JFrame {
 
 
     
-                                obj_lixo.setIcon(lixo);
+                                //obj_lixo.setIcon(lixo);
                                 jogo.Pontuacao++;
                             }else{
                                 cair = false;
