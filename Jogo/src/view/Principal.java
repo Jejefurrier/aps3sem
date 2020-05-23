@@ -36,7 +36,7 @@ public class Principal extends JFrame {
     String SelectedLixo;
     /** Creates new form Principal */
     public Principal() {
-        lixos.SetImage(lixo);
+        lixos.SetImage(obj_lixo);
         bg.setBounds(0, 350, 800, 500);
         //obj_lixo.setBounds(100, 0, 50, 50);
         add(bg);
@@ -87,7 +87,7 @@ public class Principal extends JFrame {
 
                                 mov.setInitialPosition(obj_lixo);
                                 
-                                lixos.SetImage(lixo);
+                                lixos.SetImage(obj_lixo);
 
 
     
