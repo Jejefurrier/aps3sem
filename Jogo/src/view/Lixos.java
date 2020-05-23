@@ -46,8 +46,8 @@ public class Lixos {
         return Imagem;
     }
 
-    public void GetTipo(){
-        
+    public int GetTipo(){
+        return this.tipo;
     }
 
 
