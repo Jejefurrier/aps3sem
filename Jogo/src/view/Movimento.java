@@ -17,7 +17,8 @@ public class Movimento {
     //Chame no inicio de cada rodada pra gerar a posição X do lixo de forma aleatoria
     void setInitialPosition(JLabel label){
         Random random = new Random();
-        int valor = random.nextInt(5) * 80; //Gera um número aleatorio entre 0 e 5 e multiplica por 10 pra pegar a posição certa
+        int valor = random.nextInt(5) * 85; //Gera um número aleatorio entre 0 e 5 e multiplica por 10 pra pegar a posição certa
+        System.out.println("Numero aleatorio " + valor);
         if(valor == 0)
             valor = 80;
         label.setBounds(valor, 0, 50,50);

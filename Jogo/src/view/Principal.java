@@ -93,6 +93,7 @@ public class Principal extends JFrame {
                                 jogo.AddNivel();
                                 System.out.println(jogo.GetNivel());
                             }else{
+
                                 System.out.println("TAERRADO");
                                 cair = false;
 
