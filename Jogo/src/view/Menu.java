@@ -7,8 +7,6 @@ package view;
 
 import conexao.conexao;
 import conexao.conexaostmt;
-
-import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -103,7 +101,6 @@ public class Menu extends javax.swing.JFrame {
         //conexaostmt conexao = new conexaostmt();
         //conexao.inserirRanking("Jorge", 9);
         //conexao.desconectar();
-
         Principal principal = new Principal();
         principal.setVisible(true);
         dispose();
