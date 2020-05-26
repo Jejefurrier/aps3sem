@@ -31,12 +31,11 @@ public class Principal extends JFrame {
     JLabel bg = new JLabel(fundo);
     ImageIcon lixo = null;
     JLabel obj_lixo = new JLabel(lixo);
-    Jogo jogo = new Jogo();
+    Jogo jogo = new Jogo("KLEBERSON");
 
     String SelectedLixo;
     /** Creates new form Principal */
     public Principal() {
-        String PlayerName = JOptionPane.showInputDialog("Insira seu nome");
         lixos.SetImage(obj_lixo);
         bg.setBounds(0, 350, 800, 500);
         //obj_lixo.setBounds(100, 0, 50, 50);
@@ -45,7 +44,7 @@ public class Principal extends JFrame {
         initComponents();
         GenerateNewTrash();
         mov.setInitialPosition(obj_lixo);
-        jogo.SetName(PlayerName);
+
     }
     
     public void Control(){
@@ -76,25 +75,25 @@ public class Principal extends JFrame {
     
     public class Mover extends Thread{
         public void run(){
-            System.out.println(lixos.tipo);
             if(cair){
                 //cair = false;
                 while(cair){
                     try{
-                        sleep(20/jogo.GetNivel());
+                        sleep(10);
                         if(obj_lixo.getY() > 500){//pega se o objeto que ta caindo ta na altura das lixeiras
-                            System.out.println("caiu");
+                            if(RightTrash(obj_lixo.getX(), 1)){ // SUBSTITUI O 1 PELO TIPO DO LIXO E VE SE AS POSIÇÕES DO LIXO TA CERTO
 
-                            if(RightTrash(obj_lixo.getX(), lixos.tipo)){ // SUBSTITUI O 1 PELO TIPO DO LIXO E VE SE AS POSIÇÕES DO LIXO TA CERTO
-                                System.out.println("ta certo");
+
+
                                 mov.setInitialPosition(obj_lixo);
+                                
                                 lixos.SetImage(obj_lixo);
-                                //obj_lixo.setIcon(lixo);
-                                jogo.AddNivel();
-                                System.out.println(jogo.GetNivel());
-                            }else{
 
-                                System.out.println("TAERRADO");
+
+    
+                                //obj_lixo.setIcon(lixo);
+                                jogo.Pontuacao++;
+                            }else{
                                 cair = false;
 
                             }
@@ -187,24 +186,19 @@ public class Principal extends JFrame {
     // End of variables declaration//GEN-END:variables
     public boolean RightTrash(int posX, int tipoLixo){
 
-        if(posX < 160){
-            System.out.println(1);
+        if(posX < 50){
             return tipoLixo == 1;
         }
-        if(posX >= 161 && posX< 320){
-            System.out.println(2);
+        if(posX >= 51 && posX< 100){
             return tipoLixo == 2;
         }
-        if(posX >= 321 && posX <480 ){
-            System.out.println(3);
+        if(posX >= 101 && posX < 150 ){
             return tipoLixo == 3;
         }
-        if(posX >= 481 && posX < 640 ){
-            System.out.println(4);
+        if(posX >= 151 && posX < 200 ){
             return tipoLixo == 4;
         }
-        if(posX >= 641 && posX < 800 ){
-            System.out.println(5);
+        if(posX >= 201 && posX < 250 ){
             return tipoLixo == 5;
         }
 
