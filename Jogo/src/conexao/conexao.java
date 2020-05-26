@@ -16,10 +16,18 @@ public class conexao {
     protected Statement stmt = null;
     protected ResultSet resultSet = null;
     protected PreparedStatement stmtprep = null;
-    
+
     protected boolean conectar(){
+        try{
+
+
+        Class.forName("org.sqlite.JDBC");
+        }catch (ClassNotFoundException e){
+
+        }
         /* Conecta ao banco */
         try{
+
             String url = "jdbc:sqlite:bd/bd_jogo.db";
             
             this.conexao = DriverManager.getConnection(url);
