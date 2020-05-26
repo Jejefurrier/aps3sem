@@ -103,7 +103,7 @@ public class Menu extends javax.swing.JFrame {
         //conexaostmt conexao = new conexaostmt();
         //conexao.inserirRanking("Jorge", 9);
         //conexao.desconectar();
-        String path = JOptionPane.showInputDialog("Insira seu nome");
+
         Principal principal = new Principal();
         principal.setVisible(true);
         dispose();

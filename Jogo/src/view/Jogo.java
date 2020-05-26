@@ -7,8 +7,7 @@ public class Jogo {
     protected int Pontuacao;
     protected int Nivel = 1;
 
-    public Jogo (String Nome){
-        NomeJogador = Nome;
+    public Jogo (){
     }
 
     public void SalvarPartida(){
@@ -25,6 +24,8 @@ public class Jogo {
     {
         Nivel++;
     }
-
+    public void SetName(String Name){
+        NomeJogador = Name;
+    }
 
 }

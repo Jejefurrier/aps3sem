@@ -31,11 +31,12 @@ public class Principal extends JFrame {
     JLabel bg = new JLabel(fundo);
     ImageIcon lixo = null;
     JLabel obj_lixo = new JLabel(lixo);
-    Jogo jogo = new Jogo("KLEBERSON");
+    Jogo jogo = new Jogo();
 
     String SelectedLixo;
     /** Creates new form Principal */
     public Principal() {
+        String PlayerName = JOptionPane.showInputDialog("Insira seu nome");
         lixos.SetImage(obj_lixo);
         bg.setBounds(0, 350, 800, 500);
         //obj_lixo.setBounds(100, 0, 50, 50);
@@ -44,7 +45,7 @@ public class Principal extends JFrame {
         initComponents();
         GenerateNewTrash();
         mov.setInitialPosition(obj_lixo);
-
+        jogo.SetName(PlayerName);
     }
     
     public void Control(){
