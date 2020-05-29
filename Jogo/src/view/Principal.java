@@ -94,9 +94,13 @@ public class Principal extends JFrame {
                                 jogo.AddNivel();
                                 System.out.println(jogo.GetNivel());
                             }else{
+                                JOptionPane.showMessageDialog(null, "Você perdeu!, sua pontuação foi de "+ jogo.GetNivel() + " pontos!");
                                 jogo.SalvarPartida();
                                 System.out.println("TAERRADO");
                                 cair = false;
+                                Menu menu = new Menu();
+                                menu.setVisible(true);
+                                dispose();
 
                             }
 
