@@ -27,7 +27,7 @@ public class Movimento {
     void WalkRight(JLabel label){
         if(label.getX() >= 640) {
         }else{
-            label.setBounds(label.getX() + 1, label.getY(), 50,50);
+            label.setBounds(label.getX() + 160, label.getY(), 50,50);
         }
         System.out.println(label.getX());
     }
@@ -35,7 +35,7 @@ public class Movimento {
     void WalkLeft(JLabel label){
         if(label.getX() <= 80) {
         }else{
-            label.setBounds(label.getX() - 1, label.getY(), 50,50);
+            label.setBounds(label.getX() - 160, label.getY(), 50,50);
         }
         System.out.println(label.getX());
     }

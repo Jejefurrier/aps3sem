@@ -12,7 +12,7 @@ public class Jogo {
 
     public void SalvarPartida(){
         conexaostmt con = new conexaostmt();
-        con.inserirRanking(NomeJogador, Pontuacao);
+        con.inserirRanking(NomeJogador, Nivel);
     }
 
     public int GetNivel()
