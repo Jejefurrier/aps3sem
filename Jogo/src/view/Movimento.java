@@ -18,7 +18,6 @@ public class Movimento {
     void setInitialPosition(JLabel label){
         Random random = new Random();
         int valor = Posicoes[random.nextInt(5)]-25; //Gera um número aleatorio entre 0 e 5 e multiplica por 10 pra pegar a posição certa
-        System.out.println("Numero aleatorio " + valor);
         if(valor == 0)
             valor = 80;
         label.setBounds(valor, 0, 50,50);
@@ -29,7 +28,6 @@ public class Movimento {
         }else{
             label.setBounds(label.getX() + 160, label.getY(), 50,50);
         }
-        System.out.println(label.getX());
     }
     //Chame no evento keypress da seta pra ESQUERDA, ele vai receber a atual posição X do lixo e vai retornar a nova posição dele
     void WalkLeft(JLabel label){
@@ -37,7 +35,6 @@ public class Movimento {
         }else{
             label.setBounds(label.getX() - 160, label.getY(), 50,50);
         }
-        System.out.println(label.getX());
     }
     void FallLixo(JLabel label){
         label.setBounds(label.getX(), label.getY() + 1, 50, 50);

@@ -43,6 +43,7 @@ public class Lixos {
             System.out.println("Erro ao consumir resultado. " + ex);
                  
         }
+        System.out.println("Imagem: " + Imagem + "Tipo: " + tipo);
         return Imagem;
     }
 

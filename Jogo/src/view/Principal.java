@@ -37,6 +37,10 @@ public class Principal extends JFrame {
     /** Creates new form Principal */
     public Principal() {
         String PlayerName = JOptionPane.showInputDialog("Insira seu nome");
+        while(PlayerName.isEmpty()){
+            PlayerName = JOptionPane.showInputDialog("Insira seu nome");
+        }
+
         lixos.SetImage(obj_lixo);
         bg.setBounds(0, 350, 800, 500);
         //obj_lixo.setBounds(100, 0, 50, 50);
@@ -53,7 +57,7 @@ public class Principal extends JFrame {
         addKeyListener(new KeyListener(){
             @Override
             public void keyTyped(KeyEvent e){
-                throw new UnsupportedOperationException("Not supported yet.");
+                //throw new UnsupportedOperationException("Not supported yet.");
             }
 
             @Override
@@ -69,39 +73,45 @@ public class Principal extends JFrame {
 
             @Override
             public void keyReleased(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet.");
+                //throw new UnsupportedOperationException("Not supported yet.");
             }
         });
     }
     
     public class Mover extends Thread{
         public void run(){
+            int nivel;
             System.out.println(lixos.tipo);
             if(cair){
                 //cair = false;
                 while(cair){
                     try{
-                        sleep(20/jogo.GetNivel());
+                        if(jogo.GetNivel() < 20){
+                            nivel = jogo.GetNivel();
+                        }else{
+                            nivel = 20;
+                        }
+                        sleep(20/nivel);
                         if(obj_lixo.getY() > 500){//pega se o objeto que ta caindo ta na altura das lixeiras
-                            System.out.println("caiu");
-                            System.out.println(obj_lixo.getX());
+
 
                             if(RightTrash(obj_lixo.getX(), lixos.tipo)){ // SUBSTITUI O 1 PELO TIPO DO LIXO E VE SE AS POSIÇÕES DO LIXO TA CERTO
-                                System.out.println("ta certo");
                                 mov.setInitialPosition(obj_lixo);
                                 lixos.SetImage(obj_lixo);
                                 //obj_lixo.setIcon(lixo);
                                 jogo.AddNivel();
-                                System.out.println(jogo.GetNivel());
+
+                                System.out.println("Proximo");
                             }else{
+                                System.out.println("DEBUG: LIXO:" + lixos.Imagem + " " + lixos.tipo + " " + obj_lixo.getX() + "," + obj_lixo.getY());
                                 JOptionPane.showMessageDialog(null, "Você perdeu!, sua pontuação foi de "+ jogo.GetNivel() + " pontos!");
                                 jogo.SalvarPartida();
-                                System.out.println("TAERRADO");
                                 cair = false;
                                 Menu menu = new Menu();
                                 menu.setVisible(true);
                                 dispose();
 
+                                System.out.println("Proximo");
                             }
 
 
@@ -196,19 +206,19 @@ public class Principal extends JFrame {
             System.out.println(1);
             return tipoLixo == 1;
         }
-        if(posX >= 161 && posX< 320){
+        if(posX >= 161 && posX<= 320){
             System.out.println(2);
             return tipoLixo == 2;
         }
-        if(posX >= 321 && posX <480 ){
+        if(posX >= 321 && posX <= 480 ){
             System.out.println(3);
             return tipoLixo == 3;
         }
-        if(posX >= 481 && posX < 640 ){
+        if(posX >= 481 && posX <= 640 ){
             System.out.println(4);
             return tipoLixo == 4;
         }
-        if(posX >= 641 && posX < 800 ){
+        if(posX >= 641 && posX <= 800 ){
             System.out.println(5);
             return tipoLixo == 5;
         }
