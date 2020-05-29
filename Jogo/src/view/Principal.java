@@ -22,7 +22,7 @@ import javax.swing.*;
  * @author vini_
  */
 public class Principal extends JFrame {
-
+    
     view.Movimento mov = new view.Movimento();
     Lixos lixos = new Lixos();
     boolean cair = true;
@@ -36,6 +36,7 @@ public class Principal extends JFrame {
     String SelectedLixo;
     /** Creates new form Principal */
     public Principal() {
+        setResizable(false);
         String PlayerName = JOptionPane.showInputDialog("Insira seu nome");
         while(PlayerName.isEmpty()){
             PlayerName = JOptionPane.showInputDialog("Insira seu nome");
