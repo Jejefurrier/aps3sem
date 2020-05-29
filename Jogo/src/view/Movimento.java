@@ -13,11 +13,11 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class Movimento {
-
+    private int[] Posicoes = new int[]{80, 240, 400, 560, 720};
     //Chame no inicio de cada rodada pra gerar a posição X do lixo de forma aleatoria
     void setInitialPosition(JLabel label){
         Random random = new Random();
-        int valor = random.nextInt(5) * 85; //Gera um número aleatorio entre 0 e 5 e multiplica por 10 pra pegar a posição certa
+        int valor = Posicoes[random.nextInt(5)]-25; //Gera um número aleatorio entre 0 e 5 e multiplica por 10 pra pegar a posição certa
         System.out.println("Numero aleatorio " + valor);
         if(valor == 0)
             valor = 80;
