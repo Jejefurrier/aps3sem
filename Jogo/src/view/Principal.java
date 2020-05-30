@@ -6,15 +6,8 @@
 
 package view;
 
-import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.File;
-import java.io.IOException;
-import java.util.Collection;
-import java.util.List;
-import java.util.Random;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 /**
@@ -32,8 +25,8 @@ public class Principal extends JFrame {
     ImageIcon lixo = null;
     JLabel obj_lixo = new JLabel(lixo);
     Jogo jogo = new Jogo();
-
     String SelectedLixo;
+
     /** Creates new form Principal */
     public Principal() {
         setResizable(false);
@@ -44,7 +37,6 @@ public class Principal extends JFrame {
 
         lixos.SetImage(obj_lixo);
         bg.setBounds(0, 350, 800, 500);
-        //obj_lixo.setBounds(100, 0, 50, 50);
         add(bg);
         add(obj_lixo);
         initComponents();
@@ -58,7 +50,6 @@ public class Principal extends JFrame {
         addKeyListener(new KeyListener(){
             @Override
             public void keyTyped(KeyEvent e){
-                //throw new UnsupportedOperationException("Not supported yet.");
             }
 
             @Override
@@ -69,12 +60,10 @@ public class Principal extends JFrame {
                 if(e.getKeyCode() == 37){
                     mov.WalkLeft(obj_lixo);
                 }
-                //obj_lixo.setBounds(x, y, 50, 50);
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet.");
             }
         });
     }
@@ -84,7 +73,6 @@ public class Principal extends JFrame {
             int nivel;
             System.out.println(lixos.tipo);
             if(cair){
-                //cair = false;
                 while(cair){
                     try{
                         if(jogo.GetNivel() < 20){
@@ -99,20 +87,14 @@ public class Principal extends JFrame {
                             if(RightTrash(obj_lixo.getX(), lixos.tipo)){ // SUBSTITUI O 1 PELO TIPO DO LIXO E VE SE AS POSIÇÕES DO LIXO TA CERTO
                                 mov.setInitialPosition(obj_lixo);
                                 lixos.SetImage(obj_lixo);
-                                //obj_lixo.setIcon(lixo);
                                 jogo.AddNivel();
-
-                                System.out.println("Proximo");
                             }else{
-                                System.out.println("DEBUG: LIXO:" + lixos.Imagem + " " + lixos.tipo + " " + obj_lixo.getX() + "," + obj_lixo.getY());
                                 JOptionPane.showMessageDialog(null, "Você perdeu!, sua pontuação foi de "+ jogo.GetNivel() + " pontos!");
                                 jogo.SalvarPartida();
                                 cair = false;
                                 Menu menu = new Menu();
                                 menu.setVisible(true);
                                 dispose();
-
-                                System.out.println("Proximo");
                             }
 
 
@@ -122,8 +104,6 @@ public class Principal extends JFrame {
                         System.out.println("Erro ao mover elemento");
                     }
                     mov.FallLixo(obj_lixo);
-                    //y+=1;
-                    //obj_lixo.setBounds(x, y, 50, 50);
                 }   
             }
             
@@ -204,23 +184,18 @@ public class Principal extends JFrame {
     public boolean RightTrash(int posX, int tipoLixo){
 
         if(posX < 160){
-            System.out.println(1);
             return tipoLixo == 1;
         }
         if(posX >= 161 && posX<= 320){
-            System.out.println(2);
             return tipoLixo == 2;
         }
         if(posX >= 321 && posX <= 480 ){
-            System.out.println(3);
             return tipoLixo == 3;
         }
         if(posX >= 481 && posX <= 640 ){
-            System.out.println(4);
             return tipoLixo == 4;
         }
         if(posX >= 641 && posX <= 800 ){
-            System.out.println(5);
             return tipoLixo == 5;
         }
 

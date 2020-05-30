@@ -24,6 +24,7 @@ public class Jogo {
     {
         Nivel++;
     }
+
     public void SetName(String Name){
         NomeJogador = Name;
     }

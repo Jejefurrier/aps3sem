@@ -38,24 +38,6 @@ public class Ranking extends javax.swing.JFrame {
         } finally{
             conexao.desconectar();
         }
-        /*try {
-            int i = 1;
-            String linha = "Posição - Nome - Pontuação";
-            listaModel.addElement(linha);
-            while(result.next()){
-                linha = i + " - " + result.getString("nome") + " - " + result.getInt("pontuacao");
-                listaModel.addElement(linha);
-                i++;
-            }
-        } catch (SQLException e) {
-            System.out.println("Falha ao conectar ao servidor. " + e);
-        } finally{
-            conexao.desconectar();
-        }
-        DefaultListCellRenderer renderer =  (DefaultListCellRenderer)jList1.getCellRenderer();  
-        renderer.setHorizontalAlignment(SwingConstants.CENTER);  
-        jList1.setModel(listaModel);
-        */
     }
 
     /**

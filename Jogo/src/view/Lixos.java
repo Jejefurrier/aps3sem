@@ -2,19 +2,8 @@ package view;
 
 import conexao.conexaostmt;
 import java.util.Random;
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.io.File;
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collection;
-import java.util.List;
-import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 
@@ -43,7 +32,6 @@ public class Lixos {
             System.out.println("Erro ao consumir resultado. " + ex);
                  
         }
-        System.out.println("Imagem: " + Imagem + "Tipo: " + tipo);
         return Imagem;
     }
 

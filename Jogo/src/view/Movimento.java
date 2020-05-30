@@ -1,15 +1,6 @@
 package view;
 
 import java.util.Random;
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.io.File;
-import java.io.IOException;
-import java.util.Collection;
-import java.util.List;
-import java.util.Random;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class Movimento {
